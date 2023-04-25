@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "http://interview.dev.kaufmanrossin.com/api/delivery",
   headers: {"Content-Type": "application/json"},
 })
 

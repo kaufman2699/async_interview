@@ -17,6 +17,6 @@ app.use(cors({
   origin: '*'
 }))
 
-app.use('/workflows', workflowsRouter);
+app.use('/api/workflow/workflows', workflowsRouter);
 
 module.exports = app;

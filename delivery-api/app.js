@@ -17,6 +17,6 @@ app.use(cors({
   origin: '*'
 }))
 
-app.use('/deliveries', deliveriesRouter);
+app.use('/api/delivery/deliveries', deliveriesRouter);
 
 module.exports = app;
