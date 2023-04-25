@@ -22,14 +22,14 @@ router.post('/', async function(req, res, next) {
 
   const params = req.body;
 
-  const workflow = await database('workflows').insert(
+  const [workflow] = await database('workflows').insert(
     { name: params.name }
   ).returning(['*']);
 
   const _tasks = await database('tasks').insert([
-    { workflow_id: workflow.id, name: "PREPARATION", state: "NEW"},
+    { workflow_id: workflow.id, name: "PREPARE", state: "NEW"},
     { workflow_id: workflow.id, name: "REVIEW", state: "NEW"},
-    { workflow_id: workflow.id, name: "DELIVERY", state: "NEW"},
+    { workflow_id: workflow.id, name: "DELIVER", state: "NEW"},
   ])
 
   res.send(workflow);
